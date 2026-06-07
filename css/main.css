@@ -1,0 +1,144 @@
+/* CUT TO — Black & White Editorial */
+
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Inter:wght@300;400&display=swap");
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --text-muted: #888888;
+  --rule: rgba(255, 255, 255, 0.12);
+
+  --font-display: "Bodoni Moda", "Didot", "Georgia", serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
+}
+
+body.site {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* Logo — typewriter */
+
+.logo-type {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  min-height: 1.1em;
+  text-transform: uppercase;
+}
+
+.logo-type__cursor {
+  display: inline-block;
+  width: 1px;
+  height: 0.85em;
+  background: var(--text);
+  margin-left: 2px;
+  vertical-align: baseline;
+  animation: cursorBlink 0.9s step-end infinite;
+}
+
+.logo-type__cursor.is-hidden {
+  display: none;
+}
+
+@keyframes cursorBlink {
+  50% { opacity: 0; }
+}
+
+/* Typography */
+
+.site .hero__tagline-en {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.site .hero__tagline-zh {
+  font-family: var(--font-body);
+  font-size: clamp(0.8125rem, 1.8vw, 0.9375rem);
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.22em;
+}
+
+.site .hero__intro {
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+.site .hero__status {
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+}
+
+.site .hero__link {
+  letter-spacing: 0.18em;
+}
+
+.site .site-footer {
+  color: var(--text-muted);
+}
+
+.site .site-footer__heading {
+  color: var(--text);
+  letter-spacing: 0.22em;
+}
+
+.site .site-footer p {
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+/* Opening Letter */
+
+.site .letter-page__header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site .letter-page__wordmark {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.site .letter-page__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.site .letter-page__meta {
+  color: var(--text-muted);
+  letter-spacing: 0.16em;
+}
+
+.site .letter-page__back {
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+}
+
+.site .letter-page__body {
+  font-size: 0.9375rem;
+  font-weight: 300;
+}
+
+.site .letter-page__closing {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  letter-spacing: 0.03em;
+  border-top: 1px solid var(--rule);
+}
