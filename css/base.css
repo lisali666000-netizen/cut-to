@@ -28,11 +28,11 @@ a:hover {
 /* Full-screen hero */
 
 .hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100vh - 3.75rem);
+  min-height: calc(100dvh - 3.75rem);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3rem);
 }
 
