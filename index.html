@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/editorial.css">
 </head>
-<body class="site">
+<body class="site" data-page="home">
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -51,69 +51,22 @@
     <section class="band" aria-labelledby="featured-label">
       <div class="wrap">
         <h2 class="band__label" id="featured-label">Featured</h2>
-
-        <article class="featured">
-          <a href="articles/andteam-comeback.html" aria-hidden="true" tabindex="-1">
-            <div class="media media--featured">
-              <div class="media__frame"></div>
-            </div>
-          </a>
-          <div class="featured__copy">
-            <p class="kicker editorial-meta">Stories / Sample</p>
-            <h3 class="featured__title"><a href="articles/andteam-comeback.html">Sample Story</a></h3>
-            <p class="featured__excerpt">Sample content for reviewing the story layout. This placeholder is not a published article.</p>
-            <p class="featured__date"><span>Sample only · Unpublished</span></p>
-            <a href="articles/andteam-comeback.html" class="link-more">Read the story</a>
-          </div>
-        </article>
+        <div class="" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading stories…</p></div>
+        <noscript><p class="empty-note">Enable JavaScript to load stories.</p></noscript>
       </div>
     </section>
-
     <section class="band" aria-labelledby="latest-label">
       <div class="wrap">
         <h2 class="band__label" id="latest-label">Latest</h2>
-
-        <div class="card-grid card-grid--2">
-          <article class="card">
-            <a href="articles/andteam-comeback.html">
-              <div class="card__media"></div>
-              <p class="card__kicker editorial-meta">Stories / Sample</p>
-              <h3 class="card__title">Sample Story</h3>
-              <p class="card__excerpt">Neutral placeholder content for the story template. Not a published article.</p>
-              <p class="card__date"><span>Sample only · Unpublished</span></p>
-            </a>
-          </article>
-
-          <article class="card">
-            <a href="articles/loren-seoul.html">
-              <div class="card__media"></div>
-              <p class="card__kicker editorial-meta">Live / Sample Photo Essay</p>
-              <h3 class="card__title">Sample Photo Essay</h3>
-              <p class="card__excerpt">Neutral placeholder content for the photo essay template. No photographs or reporting are published here.</p>
-              <p class="card__date"><span>Sample only · Unpublished</span></p>
-            </a>
-          </article>
-        </div>
+        <div class="card-grid card-grid--3" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading stories…</p></div>
+        <noscript><p class="empty-note">Enable JavaScript to load stories.</p></noscript>
       </div>
     </section>
-
     <section class="band" aria-labelledby="live-label">
       <div class="wrap">
         <h2 class="band__label" id="live-label">Live</h2>
-
-        <div class="card-grid card-grid--2 category-grid">
-          <article class="card">
-            <a href="articles/loren-seoul.html">
-              <div class="card__media"></div>
-              <p class="card__kicker editorial-meta">Sample Photo Essay</p>
-              <h3 class="card__title">Sample Photo Essay</h3>
-              <p class="card__excerpt">Sample image frames and captions for reviewing the photo essay layout.</p>
-              <p class="card__date"><span>Sample only · Unpublished</span></p>
-            </a>
-          </article>
-        </div>
-
-        <p class="band__footer"><a class="link-more" href="live.html">All live coverage</a></p>
+        <div class="card-grid card-grid--2 category-grid" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading stories…</p></div>
+        <noscript><p class="empty-note">Enable JavaScript to load stories.</p></noscript>
       </div>
     </section>
   </main>
@@ -127,5 +80,6 @@
 
   <script src="js/nav.js"></script>
   <script src="js/logo.js"></script>
+  <script type="module" src="js/content.js"></script>
 </body>
 </html>

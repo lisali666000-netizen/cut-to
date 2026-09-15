@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/editorial.css">
 </head>
-<body class="site">
+<body class="site" data-page="LIVE">
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -33,17 +33,8 @@
     </header>
 
     <section class="listing wrap">
-      <div class="card-grid card-grid--2 category-grid">
-        <article class="card">
-          <a href="articles/loren-seoul.html">
-            <div class="card__media"></div>
-            <p class="card__kicker editorial-meta">Sample Photo Essay</p>
-            <h2 class="card__title">Sample Photo Essay</h2>
-            <p class="card__excerpt">Neutral placeholder content for the photo essay template. Not a published photo essay.</p>
-            <p class="card__date"><span>Sample only · Unpublished</span></p>
-          </a>
-        </article>
-      </div>
+      <div class="card-grid card-grid--2 category-grid" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading stories…</p></div>
+      <noscript><p class="empty-note">Enable JavaScript to load stories.</p></noscript>
     </section>
   </main>
 
@@ -55,5 +46,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script type="module" src="js/content.js"></script>
 </body>
 </html>

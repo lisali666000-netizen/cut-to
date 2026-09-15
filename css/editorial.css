@@ -698,3 +698,48 @@ body.nav-open {
 @media (max-width: 63.99rem) {
   .about-body__founders { margin-top: 2rem; }
 }
+
+/* CMS media keeps the existing editorial geometry without placeholder labels. */
+.cms-card-media::after { content: none; }
+.cms-card-media { overflow: hidden; }
+.cms-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.cms-media > img { width: 100%; height: auto; }
+.cms-featured > img { aspect-ratio: 16 / 9; object-fit: cover; }
+.cms-body a { text-decoration: underline; text-underline-offset: 0.2em; }
+.cms-body { white-space: pre-line; }
+.cms-gallery { margin-top: 2.5rem; }
+.cms-article > .empty-note,
+.cms-article > .page-head__title,
+.cms-article > .link-more { display: block; margin: 2rem clamp(1.5rem, 5vw, 3rem); }
+.category-grid > .card--text:first-child > a { display: block; max-width: 42rem; }
+@media (max-width: 47.99rem) {
+  .cms-featured > img { aspect-ratio: 3 / 2; }
+}
+
+/* Keep portrait CMS images readable without cropping their content. */
+.cms-article .cms-media > img,
+.article .cms-media > img {
+  width: auto;
+  max-width: 100%;
+  max-height: 85vh;
+  max-height: 85svh;
+  margin-inline: auto;
+  object-fit: contain;
+}
+.card-grid > .empty-note { grid-column: 1 / -1; }
+@media (min-width: 64rem) {
+  .card-grid--3 > .card:only-child { grid-column: 1 / -1; }
+  .card-grid--3 > .card:only-child:not(.card--text) > a {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+  .card-grid--3 > .card:only-child .card__media {
+    grid-row: 1 / 5;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 0;
+  }
+  .card-grid--3 > .card:only-child .card__title {
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+  }
+}
