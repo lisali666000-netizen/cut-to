@@ -442,6 +442,16 @@ body.nav-open {
   font-weight: 300;
 }
 
+@media (min-width: 48rem) {
+  .article__header {
+    max-width: 820px;
+  }
+
+  .article__body {
+    max-width: 740px;
+  }
+}
+
 .article__body p {
   margin: 0 0 1.5rem;
   line-height: 1.8;
