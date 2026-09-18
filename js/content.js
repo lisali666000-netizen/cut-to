@@ -99,6 +99,19 @@ export function renderPost(target, post) {
   for (const image of post.gallery || []) { const f = figure(image); if (f) gallery.append(f); }
   if (gallery.children.length) article.append(gallery);
   target.replaceChildren(article);
+  const captionAlignment = new ResizeObserver(entries => {
+    for (const {target: image} of entries) {
+      const figure = image.parentElement;
+      const caption = figure.querySelector('figcaption');
+      const imageRect = image.getBoundingClientRect();
+      const figureRect = figure.getBoundingClientRect();
+      caption.style.marginLeft = `${imageRect.left - figureRect.left}px`;
+      caption.style.marginRight = `${figureRect.right - imageRect.right}px`;
+    }
+  });
+  article.querySelectorAll('.cms-media').forEach(figure => {
+    if (figure.querySelector('figcaption')) captionAlignment.observe(figure.querySelector('img'));
+  });
   document.title = (post.seoTitle || post.title) + ' · CUT TO';
   document.querySelector('meta[name="description"]')?.setAttribute('content',post.seoDescription || post.excerpt || post.dek || '');
   const nav = document.querySelector(`nav a[href="${post.section === 'LIVE' ? 'live' : 'stories'}.html"]`); nav?.setAttribute('aria-current','page');

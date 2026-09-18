@@ -681,7 +681,6 @@ body.nav-open {
   }
   .category-grid > .card:first-child .card__kicker { align-self: end; }
   .essay-grid { max-width: 64rem; margin-inline: auto; }
-  .article__hero > .media__caption { max-width: 64rem; margin-inline: auto; }
 }
 @media (max-width: 39.99rem) {
   .conversation-contact__links span { display: block; }
