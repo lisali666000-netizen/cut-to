@@ -27,7 +27,7 @@ function img(image) {
 function figure(image, cls = '') {
   const picture = img(image); if (!picture) return null;
   const f = el('figure', 'media cms-media ' + cls); f.append(picture);
-  const caption = [image.caption, image.credit].filter(Boolean).join(' — ');
+  const caption = [image.caption, image.credit && `Photo by ${image.credit}`].filter(Boolean).join(' ');
   if (caption) f.append(el('figcaption', 'media__caption', caption));
   return f;
 }
