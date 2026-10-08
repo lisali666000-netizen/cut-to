@@ -1,4 +1,4 @@
-import {getHome, getSection, getPost, imageUrl} from './sanity.js';
+import {getHome, getSection, getCalendar, getPost, imageUrl} from './sanity.js';
 const el = (tag, cls, text) => {
   const node = document.createElement(tag);
   if (cls) node.className = cls;
@@ -114,7 +114,8 @@ export function renderPost(target, post) {
   });
   document.title = (post.seoTitle || post.title) + ' · CUT TO';
   document.querySelector('meta[name="description"]')?.setAttribute('content',post.seoDescription || post.excerpt || post.dek || '');
-  const nav = document.querySelector(`nav a[href="${post.section === 'LIVE' ? 'live' : 'stories'}.html"]`); nav?.setAttribute('aria-current','page');
+  const sectionPage = {LIVE:'live.html', STORIES:'stories.html', CALENDAR:'calendar.html'}[post.section];
+  const nav = sectionPage && document.querySelector(`nav a[href="${sectionPage}"]`); nav?.setAttribute('aria-current','page');
 }
 async function init() {
   const targets = [...document.querySelectorAll('[data-content]')];
@@ -127,7 +128,7 @@ async function init() {
       const post = slug && slug.length <= 200 ? await getPost(slug) : null;
       if (post) renderPost(targets[0],post);
       else { document.title = 'Story unavailable · CUT TO'; targets[0].replaceChildren(el('h1','page-head__title','Story unavailable'),el('p','empty-note','This story may have moved or is not available.'),link('Browse stories','stories.html','link-more')); }
-    } else listing(targets[0],await getSection(type),'h2');
+    } else listing(targets[0],await (type === 'CALENDAR' ? getCalendar() : getSection(type)),'h2');
   } catch {
     for (const target of targets) target.replaceChildren(el('p','empty-note','Stories couldn’t load just now. Please try again shortly.'),link('Try again',location.href,'link-more'));
   } finally { for (const target of targets) target.setAttribute('aria-busy','false'); }

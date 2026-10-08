@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Story · CUT TO</title>
-  <meta name="description" content="Comeback stories, music and visual analysis, artist discovery, and cultural features from CUT TO.">
+  <title>Calendar · CUT TO</title>
+  <meta name="description" content="Music calendars and upcoming live music guides from CUT TO.">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/editorial.css">
@@ -17,7 +17,7 @@
     gtag('config', 'G-GMCGZRF5WS');
   </script>
 </head>
-<body class="site" data-page="article">
+<body class="site" data-page="CALENDAR">
 
   <header class="site-header">
     <div class="site-header__inner">
@@ -27,15 +27,25 @@
         <ul class="site-nav__list">
           <li><a href="stories.html">Stories</a></li>
           <li><a href="live.html">Live</a></li>
-          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="calendar.html" aria-current="page">Calendar</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="cms-article" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading story…</p></main>
-  <noscript><p class="wrap empty-note">Enable JavaScript to load this story.</p></noscript>
+  <main>
+    <header class="page-head wrap">
+      <p class="page-head__index">Index</p>
+      <h1 class="page-head__title">Calendar</h1>
+      <p class="page-head__dek">Music calendars and guides to upcoming concerts, festivals and live music.</p>
+    </header>
+
+    <section class="listing wrap">
+      <div class="card-grid card-grid--2 category-grid" data-content aria-live="polite" aria-busy="true"><p class="empty-note">Loading calendars…</p></div>
+      <noscript><p class="empty-note">Enable JavaScript to load calendars.</p></noscript>
+    </section>
+  </main>
 
   <footer class="site-footer site-footer--page">
     <p class="site-footer__heading">Contact Us</p>

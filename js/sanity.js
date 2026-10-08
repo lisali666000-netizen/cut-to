@@ -2,7 +2,7 @@
 export const projectId = 'rwra79t2';
 export const dataset = 'production';
 export const apiVersion = '2026-09-14';
-const published = `_type == "post" && !(_id in path("drafts.**")) && !(_id in path("versions.**")) && section in ["STORIES", "LIVE"] && defined(slug.current) && defined(publishedAt) && dateTime(publishedAt) <= dateTime(now())`;
+const published = `_type == "post" && !(_id in path("drafts.**")) && !(_id in path("versions.**")) && section in ["STORIES", "LIVE", "CALENDAR"] && defined(slug.current) && defined(publishedAt) && dateTime(publishedAt) <= dateTime(now())`;
 export async function query(groq, params = {}) {
   const url = new URL(`https://${projectId}.apicdn.sanity.io/v${apiVersion}/data/query/${dataset}`);
   url.searchParams.set('query', groq);
@@ -25,6 +25,7 @@ export const getHome = () => query(`{
  "live": *[${published} && section == "LIVE"] | order(publishedAt desc)[0...3]${fields}
 }`);
 export const getSection = section => query(`*[${published} && section == $section] | order(publishedAt desc)${fields}`, {section});
+export const getCalendar = () => getSection('CALENDAR');
 export const getPost = slug => query(`*[${published} && slug.current == $slug][0]{...,coverImage,gallery,body}`, {slug});
 export function imageUrl(image, width = 1600) {
   const match = /^image-([a-zA-Z0-9]+)-(\d+)x(\d+)-([a-zA-Z0-9]+)$/.exec(image?.asset?._ref || '');
