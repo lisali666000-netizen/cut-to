@@ -712,9 +712,9 @@ body.nav-open {
 /* CMS media keeps the existing editorial geometry without placeholder labels. */
 .cms-card-media::after { content: none; }
 .cms-card-media { overflow: hidden; }
-.cms-card-media img { width: 100%; height: 100%; object-fit: cover; }
+.cms-card-media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .cms-media > img { width: 100%; height: auto; }
-.cms-featured > img { aspect-ratio: 16 / 9; object-fit: cover; }
+.cms-featured > img { aspect-ratio: 16 / 9; object-fit: cover; object-position: center top; }
 .cms-body a { text-decoration: underline; text-underline-offset: 0.2em; }
 .cms-body { white-space: pre-line; }
 .cms-gallery { margin-top: 2.5rem; }
